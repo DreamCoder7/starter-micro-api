@@ -1,9 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const assistantController = require("./controllers/assitance");
+const cors = require("cors");
 
 const app = express();
 // app.use(express.urlencoded());
+app.use(cors());
 
 const uri = `mongodb+srv://${process.env.CYCLIC_DB_USER}:${process.env.CYCLIC_DB_PASS}@cluster0.uwydggw.mongodb.net/?retryWrites=true&w=majority`;
 
@@ -23,6 +25,7 @@ app.get("/", (req, res) => {
   res.send("Tobyar!");
   res.end();
 });
+
 // Openai
 // app.http('gptfunction', {
 //   methods: ['GET', 'POST'],
