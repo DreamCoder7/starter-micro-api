@@ -31,7 +31,7 @@ app.get("/requirements", (req, res) => {
     })
     .catch((error) => {
       console.log(error);
-      res.status(500).json(message: error)
+      res.status(500).json({ message: error });
     });
 });
 
@@ -40,4 +40,3 @@ app.get("/", (req, res) => {
   res.send("Yo!");
   res.end();
 });
-
