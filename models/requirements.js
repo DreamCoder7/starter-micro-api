@@ -9,12 +9,12 @@ const requirementSchema = new Schema({
   title: {
     type: String,
   },
-  functionality: {
-    type: mongoose.SchemaTypes.ObjectId,
-    ref: "functionality",
-  },
+  functionality: [{ title: String, requirement: String, description: String }],
   additionalData: {
     type: Array,
+  },
+  image: {
+    type: String,
   },
 });
 

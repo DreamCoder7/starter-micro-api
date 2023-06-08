@@ -11,22 +11,18 @@ mongoose
   .connect(uri)
   .then((res) => {
     app.listen(process.env.PORT || 3000);
-
-    console.log(res);
   })
   .catch((error) => {
     console.log(error);
   });
 
-// console.log(assistantController.getRequirement)
 app.get("/requirements", assistantController.getRequirement);
 
 app.get("/", (req, res) => {
   console.log(`Just got a request at ${req.url}!`);
-  res.send("Yo!");
+  res.send("Tobyar!");
   res.end();
 });
-
 // Openai
 // app.http('gptfunction', {
 //   methods: ['GET', 'POST'],
