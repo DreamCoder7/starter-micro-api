@@ -21,7 +21,10 @@ exports.getRequirement = (req, res) => {
   requirement
     .save()
     .then((result) => {
-      res.send(result);
+      const resultRe = requirement
+        .find()
+        .populate("title requirement description");
+      res.send(resultRe);
     })
     .catch((error) => {
       console.log(error);
