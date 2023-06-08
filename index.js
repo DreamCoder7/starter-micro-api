@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const Requirement = require("./model/requirements");
 
 const app = express();
+// app.use(express.urlencoded());
+
 const uri = `mongodb+srv://${process.env.CYCLIC_DB_USER}:${process.env.CYCLIC_DB_PASS}@cluster0.uwydggw.mongodb.net/?retryWrites=true&w=majority`;
 
 mongoose
@@ -26,8 +28,8 @@ app.get("/requirements", (req, res) => {
 
   requirement
     .save()
-    .then((res) => {
-      res.send();
+    .then((result) => {
+      res.send(result);
     })
     .catch((error) => {
       console.log(error);
