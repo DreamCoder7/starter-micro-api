@@ -9,14 +9,13 @@ const requirementSchema = new Schema({
   title: {
     type: String,
   },
-  list: {
-    type: String,
+  functionality: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "functionality",
   },
-  content: {
-    type: String,
+  additionalData: {
+    type: Array,
   },
 });
 
-const Requirement = mongoose.model("requirements", requirementSchema);
-
-module.exports = Requirement;
+module.exports = mongoose.model("requirements", requirementSchema);
