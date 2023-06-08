@@ -18,7 +18,8 @@ mongoose
     console.log(error);
   });
 
-app.post("/requirements", assistantController.postRequirement);
+// console.log(assistantController.getRequirement)
+app.get("/requirements", assistantController.getRequirement);
 
 app.get("/", (req, res) => {
   console.log(`Just got a request at ${req.url}!`);
