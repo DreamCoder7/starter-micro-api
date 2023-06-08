@@ -3,9 +3,10 @@ const Requirement = require("../models/requirements");
 
 exports.getRequirement = (req, res) => {
   const functionality = new Functionality({
-    title: "",
-    requirement: "",
-    description: "",
+    title: "Display Personal Title",
+    requirement: "Add Personal Title",
+    description:
+      "A customizable title that represent the users name or pseudonmy",
   });
 
   functionality.save();
